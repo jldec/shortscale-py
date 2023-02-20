@@ -1,7 +1,7 @@
 """English conversion from number to string"""
 import sys
 
-__version__ = "0.0.0"
+__version__ = "0.1.0"
 
 def shortscale(num: int) -> str:
   return '{} ({} bits)'.format(num, num.bit_length())
