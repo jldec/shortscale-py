@@ -1,6 +1,6 @@
 # shortscale
 
-[![CI](https://github.com/jldec/shortscale-py/workflows/CI/badge.svg)](https://github.com/jldec/shortscale-py/actions)  
+[![CI](https://github.com/jldec/shortscale-py/actions/workflows/CI.yaml/badge.svg)](https://github.com/jldec/shortscale-py/actions)
 
 Python module to convert integers into English words.
 
