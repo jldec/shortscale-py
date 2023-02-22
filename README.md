@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/jldec/shortscale-py/actions/workflows/CI.yaml/badge.svg)](https://github.com/jldec/shortscale-py/actions)
 
+https://pypi.org/project/shortscale/
+
 Python module to convert integers into English words.
 
 This is the Python port of the shortscale function, originally written in [JavaScript](https://github.com/jldec/shortscale) and [Rust](https://github.com/jldec/shortscale-rs), documented [here](https://jldec.me/forays-from-node-to-rust). There is a also a [Go](https://github.com/jldec/shortscale-go) version.
@@ -19,7 +21,7 @@ def shortscale(num: int) -> str
 ```python
 import shortscale
 
-// ==> four hundred and twenty billion nine hundred and ninety nine thousand and fifteen
+# ==> four hundred and twenty billion nine hundred and ninety nine thousand and fifteen
 print(shortscale.shortscale(420_000_999_015))
 ```
 
@@ -37,22 +39,22 @@ $ shortscale 0xffffffff
 ```sh
 $ pip install -e .
 $ python tests/bench_shortscale.py 
-         1 calls,        100 bytes,    11000 ns/call
-         2 calls,        200 bytes,     5730 ns/call
-         5 calls,        500 bytes,     4625 ns/call
-        10 calls,       1000 bytes,     4283 ns/call
-        20 calls,       2000 bytes,     4319 ns/call
-        50 calls,       5000 bytes,     4169 ns/call
-       100 calls,      10000 bytes,     4349 ns/call
-       200 calls,      20000 bytes,     4129 ns/call
-       500 calls,      50000 bytes,     4021 ns/call
-      1000 calls,     100000 bytes,     3943 ns/call
-      2000 calls,     200000 bytes,     3484 ns/call
-      5000 calls,     500000 bytes,     3097 ns/call
-     10000 calls,    1000000 bytes,     2522 ns/call
-     20000 calls,    2000000 bytes,     2180 ns/call
-     50000 calls,    5000000 bytes,     2112 ns/call
-    100000 calls,   10000000 bytes,     2117 ns/call
+         1 calls,        100 bytes,    11750 ns/call
+         2 calls,        200 bytes,     5584 ns/call
+         5 calls,        500 bytes,     4367 ns/call
+        10 calls,       1000 bytes,     4158 ns/call
+        20 calls,       2000 bytes,     4087 ns/call
+        50 calls,       5000 bytes,     4043 ns/call
+       100 calls,      10000 bytes,     4063 ns/call
+       200 calls,      20000 bytes,     4055 ns/call
+       500 calls,      50000 bytes,     3914 ns/call
+      1000 calls,     100000 bytes,     3839 ns/call
+      2000 calls,     200000 bytes,     3426 ns/call
+      5000 calls,     500000 bytes,     3044 ns/call
+     10000 calls,    1000000 bytes,     2479 ns/call
+     20000 calls,    2000000 bytes,     2131 ns/call
+     50000 calls,    5000000 bytes,     2067 ns/call
+    100000 calls,   10000000 bytes,     2072 ns/call
 ```
 
 ### Test
