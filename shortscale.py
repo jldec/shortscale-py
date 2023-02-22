@@ -26,7 +26,7 @@ def powers_of_1000(n: int):
     """
     Return list of (n, exponent) for each power of 1000.
     List is ordered highest exponent first.
-    n = 0 - 999
+    n = 0 - 999.
     exponent = 0,1,2,3...
     """
     p_list = []
@@ -39,7 +39,11 @@ def powers_of_1000(n: int):
     return p_list
 
 
-def scale_words(n: int, exponent: int, words: list[str]):
+def scale_words(n: int, exponent: int, words):
+    """
+    Append numwords for (n, exponent).
+    Highest exponent first, n = 0 - 999.
+    """
     if n == 0:
         return
 
