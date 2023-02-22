@@ -22,7 +22,13 @@ def shortscale(num: int) -> str:
     return ' '.join(words)
 
 
-def powers_of_1000(n: int) -> list[(int, int)]:
+def powers_of_1000(n: int):
+    """
+    Return list of (n, exponent) for each power of 1000.
+    List is ordered highest exponent first.
+    n = 0 - 999
+    exponent = 0,1,2,3...
+    """
     p_list = []
     exponent = 0
     while n > 0:
