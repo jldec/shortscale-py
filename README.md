@@ -39,22 +39,23 @@ $ shortscale 0xffffffff
 ```sh
 $ pip install -e .
 $ python tests/bench_shortscale.py 
-         1 calls,        100 bytes,    11750 ns/call
-         2 calls,        200 bytes,     5584 ns/call
-         5 calls,        500 bytes,     4367 ns/call
-        10 calls,       1000 bytes,     4158 ns/call
-        20 calls,       2000 bytes,     4087 ns/call
-        50 calls,       5000 bytes,     4043 ns/call
-       100 calls,      10000 bytes,     4063 ns/call
-       200 calls,      20000 bytes,     4055 ns/call
-       500 calls,      50000 bytes,     3914 ns/call
-      1000 calls,     100000 bytes,     3839 ns/call
-      2000 calls,     200000 bytes,     3426 ns/call
-      5000 calls,     500000 bytes,     3044 ns/call
-     10000 calls,    1000000 bytes,     2479 ns/call
-     20000 calls,    2000000 bytes,     2131 ns/call
-     50000 calls,    5000000 bytes,     2067 ns/call
-    100000 calls,   10000000 bytes,     2072 ns/call
+         1 calls,        100 bytes,    10959 ns/call
+         2 calls,        200 bytes,     4708 ns/call
+         5 calls,        500 bytes,     3733 ns/call
+        10 calls,       1000 bytes,     3604 ns/call
+        20 calls,       2000 bytes,     3535 ns/call
+        50 calls,       5000 bytes,     3507 ns/call
+       100 calls,      10000 bytes,     3527 ns/call
+       200 calls,      20000 bytes,     3505 ns/call
+       500 calls,      50000 bytes,     3403 ns/call
+      1000 calls,     100000 bytes,     3362 ns/call
+      2000 calls,     200000 bytes,     3089 ns/call
+      5000 calls,     500000 bytes,     2760 ns/call
+     10000 calls,    1000000 bytes,     2238 ns/call
+     20000 calls,    2000000 bytes,     1895 ns/call
+     50000 calls,    5000000 bytes,     1811 ns/call
+    100000 calls,   10000000 bytes,     1808 ns/call
+    200000 calls,   20000000 bytes,     1809 ns/call
 ```
 
 ### Test
