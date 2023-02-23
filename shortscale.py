@@ -1,5 +1,6 @@
 """English conversion from number to string"""
 import sys
+import math
 
 __version__ = '1.1.1'
 
@@ -16,35 +17,24 @@ def shortscale(num: int) -> str:
     elif num >= 1000 ** 11:
         words += ' (big number)'
     else:
-        p_list = powers_of_1000(num)
-        exponent_count = len(p_list)
-        for (n, exponent) in p_list:
-            words += scale_words(n, exponent, exponent_count)
+        max_exponent = math.ceil(len(str(num)) / 3) - 1
+        for exponent in range(max_exponent,-1,-1):
+            power = 1000 ** exponent
+            n = num // power
+            words += scale_words(n, exponent, max_exponent)
+            num = num % power
 
     # return words string without leading space
     return words[1:]
 
-def powers_of_1000(n: int):
+def scale_words(n: int, exponent: int, max_exponent):
     """
-    Return list of (n, exponent) for each power of 1000.
-    List is ordered highest exponent first.
-    n = 0 - 999.
-    exponent = 0,1,2,3...
-    """
-    p_list = []
-    exponent = 0
-    while n > 0:
-        p_list.insert(0, (n % 1000, exponent))
-        n = n // 1000
-        exponent += 1
-
-    return p_list
-
-
-def scale_words(n: int, exponent: int, exponent_count):
-    """
-    return words for (n, exponent).
-    Highest exponent first, n = 0 - 999.
+    Return words for (n, exponent)
+    E.g.
+    (102,3) => ' one hundred and two billion'
+     (45,2) => ' forty five million'
+     (12,0) => ' and twelve' 
+            or ' twelve' (when max_exponent == 0)
     """
     s_words = ''
     if n == 0:
@@ -56,7 +46,7 @@ def scale_words(n: int, exponent: int, exponent_count):
 
     if tens_and_units := n % 100:
 
-        if hundreds or (exponent == 0 and exponent_count > 1):
+        if hundreds or (exponent == 0 and max_exponent > 0):
             s_words += ' and'
 
         if tens_and_units <= 20:

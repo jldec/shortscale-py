@@ -12,8 +12,8 @@ def run():
   store.append(shortscale.shortscale(NUM))
 
 def report(calls:int, time:float):
-  print(f'{calls:10d} calls, {len(store[-1])*len(store):10d} bytes, {time * 1_000_000_000 / calls:>8.0f} ns/call')
+  print(f'{calls:10d} calls, {calls * 100:10d} bytes, {time * 1_000_000_000 / calls:>8.0f} ns/call')
 
-t = timeit.Timer('run()', 'setup()', globals=globals())
+t = timeit.Timer('shortscale.shortscale(NUM)', 'pass', globals=globals())
 
 t.autorange(report)

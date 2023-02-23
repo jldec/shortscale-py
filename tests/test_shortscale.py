@@ -53,6 +53,7 @@ TESTS = [
     (100_999_120, "one hundred million nine hundred and ninety nine thousand one hundred and twenty"),
     (999_999_120, "nine hundred and ninety nine million nine hundred and ninety nine thousand one hundred and twenty"),
     (420_000_999_015, "four hundred and twenty billion nine hundred and ninety nine thousand and fifteen"),
+    (50_000_050_000_050, "fifty trillion fifty million and fifty"),
     (9_007_199_254_740_999, "nine quadrillion seven trillion one hundred and ninety nine billion two hundred and fifty four million seven hundred and forty thousand nine hundred and ninety nine"),
     (999_999_999_999_999_999, "nine hundred and ninety nine quadrillion nine hundred and ninety nine trillion nine hundred and ninety nine billion nine hundred and ninety nine million nine hundred and ninety nine thousand nine hundred and ninety nine"),
     (777_777_777_777_777_777, "seven hundred and seventy seven quadrillion seven hundred and seventy seven trillion seven hundred and seventy seven billion seven hundred and seventy seven million seven hundred and seventy seven thousand seven hundred and seventy seven"),
