@@ -1,14 +1,12 @@
 """English conversion from number to string"""
 import sys
 
-__version__ = '1.1.1'
-
+__version__ = '1.2.0'
 
 def shortscale(num: int) -> str:
     words = ''
 
-    if num < 0:
-        words += ' minus'
+    if isMinus := num < 0:
         num = -num
 
     if num <= 20:
@@ -16,35 +14,29 @@ def shortscale(num: int) -> str:
     elif num >= 1000 ** 11:
         words += ' (big number)'
     else:
-        p_list = powers_of_1000(num)
-        exponent_count = len(p_list)
-        for (n, exponent) in p_list:
-            words += scale_words(n, exponent, exponent_count)
+        exponent = 0
+        n = num
+        while n:
+            next = n // 1000
+            words = scale_words(n % 1000, exponent, next > 0) + words
+            n = next
+            exponent += 1
 
-    # return words string without leading space
+    if isMinus:
+        words = ' minus' + words
+
+    # remove leading space
     return words[1:]
 
-def powers_of_1000(n: int):
-    """
-    Return list of (n, exponent) for each power of 1000.
-    List is ordered highest exponent first.
-    n = 0 - 999.
-    exponent = 0,1,2,3...
-    """
-    p_list = []
-    exponent = 0
-    while n > 0:
-        p_list.insert(0, (n % 1000, exponent))
-        n = n // 1000
-        exponent += 1
 
-    return p_list
-
-
-def scale_words(n: int, exponent: int, exponent_count):
+def scale_words(n: int, exponent: int, there_is_more: bool):
     """
-    return words for (n, exponent).
-    Highest exponent first, n = 0 - 999.
+    Return words for (n, exponent) where n = 0 - 999
+    E.g.
+    (102,3) => ' one hundred and two billion'
+     (45,2) => ' forty five million'
+     (12,0) => ' twelve'
+            or ' and twelve' (when there_is_more)
     """
     s_words = ''
     if n == 0:
@@ -56,7 +48,7 @@ def scale_words(n: int, exponent: int, exponent_count):
 
     if tens_and_units := n % 100:
 
-        if hundreds or (exponent == 0 and exponent_count > 1):
+        if hundreds or (exponent == 0 and there_is_more):
             s_words += ' and'
 
         if tens_and_units <= 20:
