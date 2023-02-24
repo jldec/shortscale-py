@@ -38,21 +38,15 @@ $ shortscale 0xffffffff
 ### Benchmarks
 ```sh
 $ pip install -e .
-$ python tests/bench_shortscale.py 
-         1 calls,        100 bytes,    10959 ns/call
-         2 calls,        200 bytes,     4708 ns/call
-         5 calls,        500 bytes,     3733 ns/call
-        10 calls,       1000 bytes,     3604 ns/call
-        20 calls,       2000 bytes,     3535 ns/call
-        50 calls,       5000 bytes,     3507 ns/call
-       100 calls,      10000 bytes,     3527 ns/call
-       200 calls,      20000 bytes,     3505 ns/call
-       500 calls,      50000 bytes,     3403 ns/call
-      1000 calls,     100000 bytes,     3362 ns/call
-      2000 calls,     200000 bytes,     3089 ns/call
-      5000 calls,     500000 bytes,     2760 ns/call
-     10000 calls,    1000000 bytes,     2238 ns/call
-     20000 calls,    2000000 bytes,     1895 ns/call
+
+Python v3.11.2 $ python tests/bench_shortscale.py
+
+     50000 calls,    5000000 bytes,     1264 ns/call
+    100000 calls,   10000000 bytes,     1216 ns/call
+    200000 calls,   20000000 bytes,     1216 ns/call
+
+Python v3.10.9 $ python tests/bench_shortscale.py
+
      50000 calls,    5000000 bytes,     1811 ns/call
     100000 calls,   10000000 bytes,     1808 ns/call
     200000 calls,   20000000 bytes,     1809 ns/call
