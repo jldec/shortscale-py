@@ -18,3 +18,7 @@ t = timeit.Timer('call()', 'setup()', globals=globals())
 
 def bench_shortscale():
     t.autorange(report)
+
+
+if __name__ == '__main__':
+    bench_shortscale()

@@ -31,4 +31,4 @@ jobs:
         pytest
     - name: bench
       run: |
-        python tests/bench_shortscale.py 
+        python shortscale/tests/bench_shortscale.py 
