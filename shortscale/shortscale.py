@@ -1,9 +1,16 @@
 """English conversion from number to string"""
-import sys
-
-__version__ = '1.2.0'
 
 def shortscale(num: int) -> str:
+    """
+    Return words for integer num
+    
+    E.g.
+           -17 => minus seventeen
+    20_001_001 => twenty million one thousand and one
+    
+    The largest scale word is nonillion (10 ** 30)
+    Returns "(big number)" when |num| > (10 ** 33 - 1)
+    """
     words = ''
 
     if isMinus := num < 0:
@@ -110,6 +117,8 @@ numwords = {
 
 
 def main():
+    import sys
+
     if len(sys.argv) < 2:
         print('usage: shortscale num')
         sys.exit(1)
