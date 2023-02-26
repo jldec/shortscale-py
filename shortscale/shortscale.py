@@ -1,5 +1,7 @@
 """English conversion from number to string"""
 
+__version__ = '1.3.1'
+
 def shortscale(num: int) -> str:
     """
     Return words for integer num
