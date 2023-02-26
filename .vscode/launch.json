@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "python shortscale.py 0xff",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/shortscale/shortscale.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": ["0xff"],
+    }
+  ]
+}
