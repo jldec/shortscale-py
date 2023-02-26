@@ -3,11 +3,9 @@
 def shortscale(num: int) -> str:
     """
     Return words for integer num
-    
     E.g.
-           -17 => minus seventeen
     20_001_001 => twenty million one thousand and one
-    
+
     The largest scale word is nonillion (10 ** 30)
     Returns "(big number)" when |num| > (10 ** 33 - 1)
     """
@@ -36,14 +34,15 @@ def shortscale(num: int) -> str:
     return words[1:]
 
 
-def scale_words(n: int, exponent: int, there_is_more: bool):
+def scale_words(n: int, exponent: int, there_is_more: bool = False):
     """
-    Return words for (n, exponent) where n = 0 - 999
+    Return words for (n, exponent)
+    where n = 0 - 999, exponent = 0 - 10
     E.g.
     (102,3) => ' one hundred and two billion'
      (45,2) => ' forty five million'
      (12,0) => ' twelve'
-            or ' and twelve' (when there_is_more)
+            or ' and twelve' (if there_is_more)
     """
     s_words = ''
     if n == 0:
