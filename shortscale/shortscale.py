@@ -1,6 +1,6 @@
 """English conversion from number to string"""
 
-__version__ = '1.3.1'
+__version__ = '1.3.2'
 
 def shortscale(num: int) -> str:
     """
