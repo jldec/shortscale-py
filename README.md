@@ -68,7 +68,7 @@ tests/test_shortscale.py .                                               [100%]
 ```
 
 ### Build
-This assumes that access to pypi.org has been configured 
+This assumes that access to pypi.org has been configured.
 
 ```sh
 pip install build twine
